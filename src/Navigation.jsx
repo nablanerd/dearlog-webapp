@@ -5,8 +5,8 @@ class Navigation extends React.Component {
     render() {
       return (
       <header>
-  <a href="#" class="logo">DEARLOG</a>
-  <a href="#" class="button">Text</a>
+  <a href="#" className="logo">DEARLOG</a>
+  <a href="#" className="button">Text</a>
 </header>
       )
       

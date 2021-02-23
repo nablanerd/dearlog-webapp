@@ -7,8 +7,8 @@ class Message extends React.Component {
 
       return (
 
-        <div class="row">
-                <div class="col-sm-12"><div className={classCard}>???</div></div>
+        <div className="row">
+                <div className="col-sm-12"><div className={classCard}>???</div></div>
   
 </div>
 
