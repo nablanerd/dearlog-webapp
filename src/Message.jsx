@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 class Message extends React.Component {
     
     render() {
+      let classCard ="card fluid "+this.props.type
+
       return (
 
-
         <div class="row">
-                <div class="col-sm-12"><div class="card fluid success">???</div></div>
+                <div class="col-sm-12"><div className={classCard}>???</div></div>
   
 </div>
 

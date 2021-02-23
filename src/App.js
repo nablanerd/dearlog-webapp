@@ -10,7 +10,7 @@ function App() {
     <div className="container">
       
       <Navigation />
-      <Message />
+      <Message type="warning"/>
     </div>
   );
 }
