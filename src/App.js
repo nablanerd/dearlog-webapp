@@ -44,7 +44,10 @@ render(){
 
       />
 
-      <Route path="/" exact component={LogList} />
+      <Route path="/" exact 
+      render={(props) => (
+        <LogList {...props} onMessageChange={this.handleMessageChange} />
+      )}/>
       <Route path="/Text" exact component={LogEditText} />
       <Route path="/Audio" exact component={LogEditAudio} />
 
