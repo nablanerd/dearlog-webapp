@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import './mini-dark.css';
 
@@ -7,6 +8,8 @@ import Logo from './Logo'
 import Navigation from './Navigation'
 import Message from './Message';
 import LogList from './LogList';
+import LogEditText from './LogEditText';
+import LogEditAudio from './LogEditAudio';
 
 
 
@@ -31,14 +34,22 @@ render(){
 
   return (
     <div className="container">
-      
+            <Router>
+
       <Navigation />
+
       <Message
       messageContent={this.state.messageContent}
       type={this.state.messageType} 
 
       />
-      <LogList onMessageChange={this.handleMessageChange}/>
+
+      <Route path="/" exact component={LogList} />
+      <Route path="/Text" exact component={LogEditText} />
+      <Route path="/Audio" exact component={LogEditAudio} />
+
+      </Router>
+
     </div>
   );
 

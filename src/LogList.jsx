@@ -20,20 +20,20 @@ class LogList extends React.Component {
       .then(res => {
         const logs = res.data;
         this.setState({ logs });
-
+/*
         this.props.onMessageChange(
           "Success!!! DATA RELOADED",
           "success"
-        )
+        )*/
 
       })
       .catch( (error) => {
         console.log(error);
         
-          this.props.onMessageChange(
+         /* this.props.onMessageChange(
             error.toString(),
             "error"           
-          )
+          )*/
 
      })
 

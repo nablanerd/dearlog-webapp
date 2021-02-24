@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class Navigation extends React.Component {
     
     render() {
       return (
       <header>
-  <a href="#" className="logo">DEARLOG</a>
-  <a href="#" className="button">Text</a>
+        <Link to="/" className="logo">DEARLOG</Link>
+
+  <Link to="/Text" className="button">Text</Link>
+
+  <Link to="/Audio" className="button">Audio</Link>
+
 </header>
       )
       
