@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 
 class Message extends React.Component {
-    
+  constructor(props) {
+    super(props);
+
+  }
+
+
     render() {
-      let classCard ="card fluid "+this.props.type
+      let classCard ="card fluid center "+this.props.type
 
       return (
 
         <div className="row">
-                <div className="col-sm-12"><div className={classCard}>???</div></div>
+                <div className="col-sm-12"><div className={classCard}>{this.props.messageContent}</div></div>
   
 </div>
 

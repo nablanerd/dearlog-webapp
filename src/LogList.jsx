@@ -7,24 +7,61 @@ class LogList extends React.Component {
     logs: []
   }
 
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+
+  }
+
+  getData(){
+
     axios.get(`http://localhost:7827/api/logs`)
       .then(res => {
         const logs = res.data;
         this.setState({ logs });
 
+        this.props.onMessageChange(
+          "Success!!! DATA RELOADED",
+          "success"
+        )
+
       })
-      .catch(function (error) {
+      .catch( (error) => {
         console.log(error);
+        
+          this.props.onMessageChange(
+            error.toString(),
+            "error"           
+          )
+
      })
+
+
+  }
+  componentDidMount() {
+
+this.getData()
   }
 
 
+  reload()
+  {
+
+this.getData()
+
+
+  }
     render() {
+
+     const isLogsEmpty =  this.state.logs.length === 0;
 
       return (
 
-  
+ isLogsEmpty? <div className="row">
+<div className="col-sm-12">
+  <div className="card fluid center">NO LOGS   <button onClick={() => this.reload()}>RELOAD?</button>
+</div>
+</div></div>
+:
 <table>
   <caption>LOGS</caption>
   <thead>
