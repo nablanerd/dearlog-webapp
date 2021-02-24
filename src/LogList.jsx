@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Heart } from 'react-feather';
 import axios from 'axios';
+import LogEmpty from './LogEmpty';
+
 
 class LogList extends React.Component {
   state = {
@@ -56,11 +58,7 @@ this.getData()
 
       return (
 
- isLogsEmpty? <div className="row">
-<div className="col-sm-12">
-  <div className="card fluid center">NO LOGS   <button onClick={() => this.reload()}>RELOAD?</button>
-</div>
-</div></div>
+ isLogsEmpty? <LogEmpty handleReload={() => this.reload()}/>
 :
 <table>
   <caption>LOGS</caption>
