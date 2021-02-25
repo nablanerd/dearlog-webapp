@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./LogEditText.css"
 
 class LogEditText extends React.Component {
     constructor(props) {
@@ -8,7 +9,39 @@ class LogEditText extends React.Component {
   
   
       render() {
-        return (<div>LogEditText</div>)
+        return (
+          <form>
+<div className="item">
+<label>foo</label>
+<input type='text' />
+</div>
+
+<div className="item">
+<label>foo</label>
+<input type='text' />
+</div>
+
+<div className="item">
+<label>foo</label>
+<input type='text' />
+</div>
+
+<div className="item">
+<label>foo</label>
+<input type='text' />
+</div>
+
+<div className="item">
+<label>foo</label>
+<input type='text' />
+</div>
+
+<div className="item">
+<label>foo</label>
+<input type='text' />
+</div>
+</form>        
+        )
       }
 
 
