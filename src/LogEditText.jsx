@@ -66,12 +66,12 @@ class LogEditText extends React.Component {
 
   <div className="content_group">
     <button className="before_button"><ArrowLeft /></button>
+    <button className="after_button"><ArrowRight/></button>
 
     <textarea className="content_textarea">
 
     </textarea>
 
-    <button className="after_button"><ArrowRight/></button>
 
 
   </div>
