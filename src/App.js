@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom'
 
 import './mini-dark.css';
 
@@ -44,12 +44,15 @@ render(){
 
       />
 
+<Route path="/get/:id"  exact component={LogEditText} />
+
       <Route path="/" exact 
       render={(props) => (
         <LogList {...props} onMessageChange={this.handleMessageChange} />
       )}/>
-      <Route path="/Text" exact component={LogEditText} />
-      <Route path="/Audio" exact component={LogEditAudio} />
+      <Route path="/text"  component={LogEditText} />
+      <Route path="/audio"  component={LogEditAudio} />
+
 
       </Router>
 

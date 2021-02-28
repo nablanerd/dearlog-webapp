@@ -6,11 +6,12 @@ class Navigation extends React.Component {
     render() {
       return (
       <header>
+        
         <Link to="/" className="logo">DEARLOG</Link>
 
-  <Link to="/Text" className="button">Text</Link>
+  <Link to="/text" className="button">Text</Link>
 
-  <Link to="/Audio" className="button">Audio</Link>
+  <Link to="/audio" className="button">Audio</Link>
 
 </header>
       )

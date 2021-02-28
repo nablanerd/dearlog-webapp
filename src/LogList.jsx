@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Heart } from 'react-feather';
+import { Heart, Link as LinkIcon} from 'react-feather';
 import axios from 'axios';
 import LogEmpty from './LogEmpty';
+import { Link } from "react-router-dom";
 
 
 class LogList extends React.Component {
@@ -80,7 +81,7 @@ this.getData()
   
   <tr key={log.id}>
   <td data-label="ID">{log.id}</td>
-  <td data-label="Title">{log.title}</td>
+  <td data-label="Title"><Link to={`/get/${log.id}`} >{log.title}</Link></td>
   <td data-label="Content">{log.content}</td>
   <td data-label="Created">{log.createdAt}</td>
   <td data-label="Heart">{log.heart? <Heart />: ""}</td>
@@ -95,6 +96,7 @@ this.getData()
 
 
   </tbody>
+
 </table>
 
 
@@ -104,6 +106,7 @@ this.getData()
       
       
       
+
     }
   }
 

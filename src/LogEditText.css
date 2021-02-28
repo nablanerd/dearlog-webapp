@@ -7,6 +7,10 @@ form {
     align-content:center;
 }
 
+.header_group {
+
+    flex-flow: column wrap;
+}
 .title_description_group {
 
     display: flex;
