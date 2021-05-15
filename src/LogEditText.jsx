@@ -25,8 +25,9 @@ class LogEditText extends React.Component {
         valueUpdated:'',
         //heart
         valueNamespace:'',
-        valueTag:''
-       // valueContent:''
+        valueTag:'',
+        
+        valueContent:''
       };
 
       this.handleChangeTitle = this.handleChangeTitle.bind(this);
@@ -36,9 +37,8 @@ class LogEditText extends React.Component {
       //heart
       this.handleChangeNamespace = this.handleChangeNamespace.bind(this);
       this.handleChangeTag = this.handleChangeTag.bind(this);
-    //  this.handleChangeContent = this.handleChangeContent.bind(this);
-
-
+      
+      this.handleChangeContent = this.handleChangeContent.bind(this);
 
       this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -50,7 +50,8 @@ class LogEditText extends React.Component {
     handleChangeUpdated(event) {    this.setState({valueUpdated: event.target.value});  }
     handleChangeNamespace(event) {    this.setState({valueNamespace: event.target.value});  }
     handleChangeTag(event) {    this.setState({valueTag: event.target.value});  }
-  //  handleChangeContent(event) {    this.setState({valueContent: event.target.value});  }
+
+    handleChangeContent(event) {    this.setState({valueContent: event.target.value});  }
 
 
     handleSubmit(event) {  
@@ -63,7 +64,9 @@ class LogEditText extends React.Component {
           description : this.state.valueDescription,
           heart : this.state.heart,
           namespace: this.state.valueNamespace,
-          tag: this.state.valueTag
+          tag: this.state.valueTag,
+
+          content: this.state.valueContent
         }
 
 
@@ -101,6 +104,8 @@ class LogEditText extends React.Component {
             valueUpdated:data.updatedAt,
             valueNamespace:data.namespace,
             valueTag:data.tag,
+
+            valueContent:data.content,
 
             mode:'EDIT'
           
@@ -165,7 +170,7 @@ class LogEditText extends React.Component {
 
     <div className="item">
       <label>Tag</label>
-      <input className="tag_input" placeholder="Tag" type='text' onChange={this.handleChangeTag} value={this.state.valueTag}/>
+      <input className="tag_input" placeholder="Tag" type='text' onChange={this.handleChangeTag} value={this.state.valueTag} />
     </div>
 
   </div>
@@ -174,10 +179,7 @@ class LogEditText extends React.Component {
     <button className="before_button"><ArrowLeft /></button>
     <button className="after_button"><ArrowRight/></button>
 
-    <textarea className="content_textarea">
-
-    </textarea>
-
+    <textarea className="content_textarea"  onChange={this.handleChangeContent} value={this.state.valueContent} />
   </div>
 
 <div className="button_group">
