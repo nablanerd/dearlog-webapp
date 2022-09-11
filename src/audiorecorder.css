@@ -1,0 +1,31 @@
+.audiorecorder {
+
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+
+
+
+    background: #333333;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 135px;
+}
+
+.audiotitle, .audiotime {
+
+
+    text-align: center;
+}
+
+
+.clignote {
+    animation: clignote 1.5s linear infinite;
+  }
+  @keyframes clignote {  
+    50% { opacity: 0; }
+  }

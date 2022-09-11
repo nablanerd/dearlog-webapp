@@ -75,3 +75,10 @@ width: 100%;
     width: 100%;
     
     }
+
+    h1.capital
+    {
+
+
+        text-transform: capitalize;
+    }

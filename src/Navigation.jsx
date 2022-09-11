@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 class Navigation extends React.Component {
     
     render() {
-      return (
+
+    return (
       <header>
         
-        <Link to="/" className="logo">DEARLOG</Link>
+  <Link to="/" className="logo">DEARLOG</Link>
 
-  <Link to="/text" className="button">Text</Link>
+  <Link to="/namespace" className="button">Namespace</Link>
 
-  <Link to="/audio" className="button">Audio</Link>
+  <Link to="/tag" className="button">Tag</Link>
 
 </header>
       )
@@ -23,3 +24,8 @@ class Navigation extends React.Component {
 
 
   export default Navigation;
+
+  /* 
+    <Link to="/select" className="button">Select</Link>
+
+    */

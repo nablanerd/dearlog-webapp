@@ -4,6 +4,10 @@ import axios from 'axios';
 import LogEmpty from './LogEmpty';
 import { Link } from "react-router-dom";
 
+import Format from './Format'
+import LogStore from './LogStore';
+
+import Search from './Search';
 
 class LogList extends React.Component {
   state = {
@@ -13,81 +17,95 @@ class LogList extends React.Component {
   constructor(props) {
     super(props);
 
+    this.format = new Format()
+
+    this.store = new LogStore()
+
+
   }
 
-  getData(){
 
-    axios.get(`http://localhost:7827/api/logs`)
-      .then(res => {
-        const logs = res.data;
-        this.setState({ logs });
+  async loadLogs()
+  {
 
-        this.props.onMessageChange(
-          "Success!!! DATA RELOADED",
-          "success"
-        )
+    try {
 
-      })
-      .catch( (error) => {
-        console.log(error);
+      const logs = await this.store.getLogs()
+
+      this.setState( {logs :  logs })
+
+      this.props.notify_success("Logs loaded !!!")
+
+
+    }
+    catch (error)
+    {
+
+      console.log(error);
         
-         this.props.onMessageChange(
-            error.toString(),
-            "error"           
-          )
+      this.props.notify_error(error.message)
 
-     })
+    }
 
 
   }
-  componentDidMount() {
+   componentDidMount() {
+    this.loadLogs()
 
-this.getData()
   }
 
 
   reload()
   {
 
-this.getData()
+    this.loadLogs()
 
 
   }
-    render() {
+   render() {
 
-     const isLogsEmpty =  this.state.logs.length === 0;
+    console.log(this.state.logs);
 
-      return (
 
- isLogsEmpty? <LogEmpty handleReload={() => this.reload()}/>
-:
+
+    const isLogsEmpty =  this.state.logs.length === 0;
+     const logs = this.props?.location?.state?.logs ? this.props.location.state.logs : this.state.logs
+     
+     return (
+
+  isLogsEmpty? <LogEmpty handleReload={() => this.reload()}/>
+: 
+<>
+
 <table>
   <caption>LOGS</caption>
   <thead>
     <tr>
       <th>ID</th>
       <th>Title</th>
-      <th>Content</th>
+      <th>Description</th>
       <th>Created</th>
       <th><Heart /></th>
       <th>Namespace</th>
-      <th>Tags</th>
-      <th>Action</th>
+      <th>Type</th>
     </tr>
   </thead>
   <tbody>
 
-  { this.state.logs.map(log => 
+  {
+  
+
+  /*  this.state.logs.map(log =>  */
+  logs.map(log =>
   
   <tr key={log.id}>
   <td data-label="ID">{log.id}</td>
-  <td data-label="Title"><Link to={`/get/${log.id}`} >{log.title}</Link></td>
-  <td data-label="Content">{log.content}</td>
-  <td data-label="Created">{log.createdAt}</td>
+  <td data-label="Title"><Link to={`/log/${log.id}`} >{log.title}</Link></td>
+  <td data-label="Description">{log.description}</td>
+  <td data-label="Created">{this.format.date(log.createdAt)}</td>
   <td data-label="Heart">{log.heart? <Heart />: ""}</td>
-  <td data-label="Namespace">{log.namespace}</td>
-  <td data-label="Tag">{log.tag}</td>
-  <td data-label="Action"><a href="#">Delete</a></td>
+  <td data-label="Namespace">{JSON.stringify(log.namespace?.name)}</td>
+  <td data-label="Type">{log.type}</td>
 
 </tr>
   
@@ -101,6 +119,7 @@ this.getData()
 
 
 
+</>
 
       )
       
