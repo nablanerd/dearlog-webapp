@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dearlog-webapp/static/css/main.48a0bcad.chunk.css",
-    "main.js": "/dearlog-webapp/static/js/main.17f53ae5.chunk.js",
-    "main.js.map": "/dearlog-webapp/static/js/main.17f53ae5.chunk.js.map",
+    "main.js": "/dearlog-webapp/static/js/main.6a97a4de.chunk.js",
+    "main.js.map": "/dearlog-webapp/static/js/main.6a97a4de.chunk.js.map",
     "runtime-main.js": "/dearlog-webapp/static/js/runtime-main.2c63c9ed.js",
     "runtime-main.js.map": "/dearlog-webapp/static/js/runtime-main.2c63c9ed.js.map",
     "static/css/2.b5404c1e.chunk.css": "/dearlog-webapp/static/css/2.b5404c1e.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.b5404c1e.chunk.css",
     "static/js/2.2ae4f329.chunk.js",
     "static/css/main.48a0bcad.chunk.css",
-    "static/js/main.17f53ae5.chunk.js"
+    "static/js/main.6a97a4de.chunk.js"
   ]
 }
