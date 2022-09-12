@@ -100,7 +100,7 @@ return data.map(log =>{
   
 
   const  LoadedStatus = (props) => {
-    return isLoaded ? 'En ligne' : 'Hors-ligne';
+    return isLoaded ? 'En ligne' : '?Hors-ligne';
   }
 
 /*   const fooCbHandle  =  (foundLogs) => {
