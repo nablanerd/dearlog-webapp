@@ -137,6 +137,16 @@ render={(props) => (
 
 )}/>
 
+<Route path="/dearlog-webapp" exact 
+render={(props) => (
+ 
+  <LogTable
+  {...props} 
+/>
+
+
+)}/>
+
 <Route async path="/linkedlogs" exact 
 render={(props) => (
  
