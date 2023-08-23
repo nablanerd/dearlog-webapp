@@ -288,9 +288,6 @@ console.log("onNextLog")
         case 'text':
           return 'text';
 
-          case 'audio':
-            return 'audio';
-
         default:
           return 'foo';
       }

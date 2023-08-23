@@ -7,21 +7,6 @@ const url = "https://dearlog-api.herokuapp.com"
 class LogStore 
 {
 
-getSocketAudioUrl = () =>
-{
-
-  return  `${url}/audio`
-
-}
-
-
-getAudioStreamingUrl = (id) =>
-{
-
-  return  `${url}/audio/${id}`
-
-}
-
 /*
 LOG
 */

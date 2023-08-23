@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Heart, Link as LinkIcon} from 'react-feather';
-import axios from 'axios';
+
 import LogEmpty from './LogEmpty';
 import { Link } from "react-router-dom";
 
 import Format from './Format'
 import LogStore from './LogStore';
-
-import Search from './Search';
 
 class LogList extends React.Component {
   state = {
@@ -87,7 +85,7 @@ class LogList extends React.Component {
       <th>Created</th>
       <th><Heart /></th>
       <th>Namespace</th>
-      <th>Type</th>
+
     </tr>
   </thead>
   <tbody>
@@ -95,7 +93,6 @@ class LogList extends React.Component {
   {
   
 
-  /*  this.state.logs.map(log =>  */
   logs.map(log =>
   
   <tr key={log.id}>
@@ -105,7 +102,7 @@ class LogList extends React.Component {
   <td data-label="Created">{this.format.date(log.createdAt)}</td>
   <td data-label="Heart">{log.heart? <Heart />: ""}</td>
   <td data-label="Namespace">{JSON.stringify(log.namespace?.name)}</td>
-  <td data-label="Type">{log.type}</td>
+
 
 </tr>
   

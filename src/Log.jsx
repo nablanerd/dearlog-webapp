@@ -18,8 +18,7 @@ import Format from './Format'
 import { stringify } from 'qs';
 
 import LogContentText from './LogContentText';
-import LogContentAudio from './LogContentAudio';
-import LogContentVideo from './LogContentVideo';
+
 
 import CreatableSelect from 'react-select/creatable';
 
@@ -73,8 +72,8 @@ class Log extends React.Component {
 
       this.handleContentChange = this.handleContentChange.bind(this);
 
-      this.handleAudioData = this.handleAudioData.bind(this);
 
+      
       this.handleNameSpaceSelect = this.handleNameSpaceSelect.bind(this)
 
       this.handleNameSpaceCreate = this.handleNameSpaceCreate.bind(this)
@@ -126,8 +125,7 @@ class Log extends React.Component {
 
       )
 
-      if(this.state.type == "audio")
-      this.saveAudio (id, this.state.createdAt)
+     
 
       this.props.notify_success("log updated")
 
@@ -138,17 +136,7 @@ class Log extends React.Component {
 
     {
 
-      const saveAudioOnServer = (log) => {
-
-        if(this.state.type == "audio")
-        {
-        this.saveAudio (log.id, log.createdAt)
-        .then(() => console.log("saveAudio"))
-
-      }
-
-      }
-
+  
       //todo object log
       this.store.addLog(
         {
@@ -172,7 +160,7 @@ class Log extends React.Component {
           
           this.load(log.id)
 
-          saveAudioOnServer(log)
+
         }
        
       )
@@ -181,47 +169,6 @@ class Log extends React.Component {
     }
      }
 
-
-     async saveAudio (id, createdAt)
-     {
-       const data = this.state.audioData;
- 
-       if(!data)return
-
-       
-       console.log("data", data)
-
-        const duration = data.duration
-
-       const convertInSeconds = (duration) =>{
-
-        return duration.h*3600+duration.m*60+duration.s
-
-       }
-
- 
-       const blob = data.blob
- 
-       var io = require('socket.io-client');
-       var ss = require('socket.io-stream');
-        
-
-       //var socket = io.connect('http://localhost:7827/audio');
-       //var socket = io.connect('https://dearlog-api.herokuapp.com/audio');
-       
-       const socket = io.connect(this.store.getSocketAudioUrl());
-
-       
-       var stream = ss.createStream();
-        
-       var toStream = require('blob-to-stream')
-  
-       ss(socket).emit('audiostream',
-       stream,
-       {createdAt: createdAt, id:id, duration : convertInSeconds(duration)});
-       toStream(blob).pipe(stream)
- 
-     }
 
 
   toggleHeart(e)
@@ -273,8 +220,6 @@ load(idParam)
 
     console.log("data", data);
 
-    //const newData = this.cleaner.format(data);
-
   let {id, title, description, createdAt, heart, updatedAt, namespace, tags, type, content} = data;
 
    const  namespaceToSelect = namespace? {...{value:namespace.name, label:namespace.name} , ...namespace} : []
@@ -283,27 +228,8 @@ load(idParam)
 
    console.log(namespaceToSelect);
 
+   this.setState({ content:content})
 
-
-   if (type === "audio" && content !== "")
-   {
- 
-    console.log("content", content);
-    const contentAudio = JSON.parse(content)
- 
-    console.log("contentAudio", contentAudio);
- 
-    this.setState({content: contentAudio })
- 
- 
-   }
-
-   else {
-
-    this.setState({ content:content})
-
-
-   }
 
 
     this.setState({
@@ -333,7 +259,6 @@ load(idParam)
   })
   .catch(e => {
 
-   // notify_error(e.message)
 
       console.log(e)
   })
@@ -369,7 +294,6 @@ modeEdit(id)
 
 
   this.setState({mode:"EDIT"})
-
 
 
 }
@@ -518,40 +442,11 @@ this.setState({tagsAvaible : this.addValueAndLabelToSelect(tags)})
     }
 
   
-
-
-handleAudioData(data)
-{
-
-
-const audioData = {...data}
-
-console.log("data", data);
-
-this.setState({audioData : data})
-
-  console.log("handleAudioData")
-}
-
-computeUrlAudio()
-{
-
-  const id = this.state.id;
-
-  if(this.state.type === "audio" && this.state.content.isRecorded)
-//return `https://dearlog-api.herokuapp.com/audio/${id}`
-return this.store.getAudioStreamingUrl(id)
-else
-return null
-}
     renderSwitch(param) {
         switch(param) {
           case 'text':
             return <LogContentText content={this.state.content} onChangeContent={this.handleContentChange} />;
-  
-            case 'audio':
-            return <LogContentAudio id={this.state.id} isAudioRecorded={this.state.content.isRecorded} duration={this.state.content.duration} url={this.computeUrlAudio()} onAudioData={this.handleAudioData}/>;
-  
+    
           default:
             return 'foo';
         }
@@ -601,7 +496,7 @@ return null
       const colourSelectStyles = {
         control: styles => ({ ...styles, backgroundColor: 'white' 
       }),
-        option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+        option: (styles) => {
           const color = "black";
           return {
             ...styles,
@@ -614,12 +509,7 @@ return null
         
       };
 
-       
-
-      //      <input id="namespace" name="namespace" className="namespace_input" placeholder="Namespace" type='text' onChange={(e) => this.handleChange(e)} value={namespace}/>
-
-      // this.state.namespace
-
+      
       return (
 
 

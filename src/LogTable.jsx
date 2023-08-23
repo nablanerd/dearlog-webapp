@@ -26,7 +26,6 @@ const LogTable =   (props) => {
       //{ label: "Namespace", accessor: "namespace", sortable: true   },
       { label: "Namespace", accessor: "namespace", sortable: true , func : (log) => <Link to={`/namespace/${log.id}`} >{log.namespace}</Link>},
 
-      { label: "Type", accessor: "type", sortable: true   },
       { label: "Action", accessor: "action", sortable: false   },
   
   
@@ -40,7 +39,6 @@ const LogTable =   (props) => {
 
     const ADD_BUTTONS = [
       {id:74373873,text:"Add Text Log", link:"/newtextlog"},
-      {id:53657667763,text:"Add Audio Log", link:"/newaudiolog"}
   ]
 
     const [logs, setLogs] = useState([]);
@@ -57,8 +55,6 @@ const LogTable =   (props) => {
 
 
          log.namespace?.name? log.namespace.name : log.namespace? log.namespace: ""
-
-         //log.namespace? log.namespace.name? log.namespace.name: log.namespace: ""
 
 
          return {
@@ -89,33 +85,10 @@ const LogTable =   (props) => {
                    
         const logsData = await store.getLogs()
 
-     // console.log("props?.location?.state?.logs ?", props?.location?.state?.logs );
-
         const logsStuff = props?.location?.state?.logs ? props.location.state.logs : logsData
 
         console.log("props?.location?.state?.logs ?", props?.location?.state?.logs );
 
- /*      let namespaceComputed = ""
-
-        if(props.location.state?.logs)
-      {
-
-        const namespace = await store.getNamespace(2)
-        namespaceComputed = namespace.name 
-
-        console.log("namespaceComputed", namespaceComputed);
-
-        const processed_data = post_process_data(logsStuff)
-
-
-      }
-      else
-      {
-
-
-      } */
-
-        //console.log("OK logsStuff", logsStuff)
 
         const processed_data = post_process_data(logsStuff)
 
