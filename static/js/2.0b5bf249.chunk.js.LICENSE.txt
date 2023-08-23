@@ -23,19 +23,6 @@ object-assign
    Copied from https://github.com/grassator/insert-text-at-cursor
  */
 
-/*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <http://feross.org>
- * @license  MIT
- */
-
-/*! blob-to-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
 /** @license React v0.20.1
  * scheduler.production.min.js
  *

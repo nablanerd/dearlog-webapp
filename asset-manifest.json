@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/dearlog-webapp/static/css/main.48a0bcad.chunk.css",
-    "main.js": "/dearlog-webapp/static/js/main.7f2a25b0.chunk.js",
-    "main.js.map": "/dearlog-webapp/static/js/main.7f2a25b0.chunk.js.map",
-    "runtime-main.js": "/dearlog-webapp/static/js/runtime-main.2c63c9ed.js",
-    "runtime-main.js.map": "/dearlog-webapp/static/js/runtime-main.2c63c9ed.js.map",
+    "main.css": "/dearlog-webapp/static/css/main.82f7359c.chunk.css",
+    "main.js": "/dearlog-webapp/static/js/main.a403aa6b.chunk.js",
+    "main.js.map": "/dearlog-webapp/static/js/main.a403aa6b.chunk.js.map",
+    "runtime-main.js": "/dearlog-webapp/static/js/runtime-main.e0f6f69e.js",
+    "runtime-main.js.map": "/dearlog-webapp/static/js/runtime-main.e0f6f69e.js.map",
     "static/css/2.b5404c1e.chunk.css": "/dearlog-webapp/static/css/2.b5404c1e.chunk.css",
-    "static/js/2.2ae4f329.chunk.js": "/dearlog-webapp/static/js/2.2ae4f329.chunk.js",
-    "static/js/2.2ae4f329.chunk.js.map": "/dearlog-webapp/static/js/2.2ae4f329.chunk.js.map",
-    "static/js/3.8f3c0c53.chunk.js": "/dearlog-webapp/static/js/3.8f3c0c53.chunk.js",
-    "static/js/3.8f3c0c53.chunk.js.map": "/dearlog-webapp/static/js/3.8f3c0c53.chunk.js.map",
+    "static/js/2.0b5bf249.chunk.js": "/dearlog-webapp/static/js/2.0b5bf249.chunk.js",
+    "static/js/2.0b5bf249.chunk.js.map": "/dearlog-webapp/static/js/2.0b5bf249.chunk.js.map",
+    "static/js/3.85114cf7.chunk.js": "/dearlog-webapp/static/js/3.85114cf7.chunk.js",
+    "static/js/3.85114cf7.chunk.js.map": "/dearlog-webapp/static/js/3.85114cf7.chunk.js.map",
     "index.html": "/dearlog-webapp/index.html",
     "static/css/2.b5404c1e.chunk.css.map": "/dearlog-webapp/static/css/2.b5404c1e.chunk.css.map",
-    "static/css/main.48a0bcad.chunk.css.map": "/dearlog-webapp/static/css/main.48a0bcad.chunk.css.map",
-    "static/js/2.2ae4f329.chunk.js.LICENSE.txt": "/dearlog-webapp/static/js/2.2ae4f329.chunk.js.LICENSE.txt"
+    "static/css/main.82f7359c.chunk.css.map": "/dearlog-webapp/static/css/main.82f7359c.chunk.css.map",
+    "static/js/2.0b5bf249.chunk.js.LICENSE.txt": "/dearlog-webapp/static/js/2.0b5bf249.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2c63c9ed.js",
+    "static/js/runtime-main.e0f6f69e.js",
     "static/css/2.b5404c1e.chunk.css",
-    "static/js/2.2ae4f329.chunk.js",
-    "static/css/main.48a0bcad.chunk.css",
-    "static/js/main.7f2a25b0.chunk.js"
+    "static/js/2.0b5bf249.chunk.js",
+    "static/css/main.82f7359c.chunk.css",
+    "static/js/main.a403aa6b.chunk.js"
   ]
 }
